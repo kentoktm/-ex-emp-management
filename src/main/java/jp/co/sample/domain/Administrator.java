@@ -4,13 +4,39 @@ package jp.co.sample.domain;
  * @author kentonakazawa
  */
 public class Administrator {
+    /**
+     * ID
+     */
     private Integer id;
+    /**
+     * 名前
+     */
     private String name;
+    /**
+     * メルアド
+     */
     private String mailAddress;
+    /**
+     * パスワード
+     */
     private String password;
 
+    /**
+     * 引数なしのコンストラクタ
+     */
     public Administrator() {
 
+    }
+
+    /**
+     * すべてのフィールドを引数に取るコンストラクタ
+     * 
+     */
+    public Administrator(Integer id, String name, String mailAddress, String password) {
+        this.id = id;
+        this.name = name;
+        this.mailAddress = mailAddress;
+        this.password = password;
     }
 
     public Integer getId() {

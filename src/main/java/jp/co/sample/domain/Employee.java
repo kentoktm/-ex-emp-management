@@ -2,24 +2,69 @@ package jp.co.sample.domain;
 
 import java.util.Date;
 
+/**
+ * @author kentonakazawa
+ */
 public class Employee {
+    /**
+     * ID
+     */
     private Integer id;
+    /**
+     * 名前
+     */
     private String name;
+    /**
+     * 画像
+     */
     private String image;
+    /**
+     * 性別
+     */
     private String gender;
+    /**
+     * 入社日
+     */
     private Date hireDate;
+    /**
+     * メルアド
+     */
     private String mailAddress;
+    /**
+     * 郵便番号
+     */
     private String zipCode;
+    /**
+     * 住所
+     */
     private String address;
+    /**
+     * 電話番号
+     */
     private String telephone;
+    /**
+     * 給料
+     */
     private Integer salary;
+    /**
+     * 特性
+     */
     private String characteristics;
+    /**
+     * 扶養人数
+     */
     private Integer dependentsCount;
 
+    /**
+     * 引数なしのコンストラクタ
+     */
     public Employee() {
 
     }
 
+    /**
+     * すべてのフィールドを引数に取るコンストラクタ
+     */
     public Employee(Integer id, String name, String image, String gender, Date hireDate, String mailAddress,
             String zipCode, String address, String telephone, Integer salary, String characteristics,
             Integer dependentsCount) {
