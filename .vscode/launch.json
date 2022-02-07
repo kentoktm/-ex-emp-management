@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ExEmpManagementApplication<ex-emp-management>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "jp.co.sample.ExEmpManagementApplication",
+            "projectName": "ex-emp-management",
+            "args": ""
+        }
+    ]
+}

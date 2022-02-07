@@ -35,7 +35,7 @@ public class AdministratorRepository {
     /**
      * 管理者情報
      */
-    public Administrator save(Administrator administrator) {
+    public Administrator insert(Administrator administrator) {
         SqlParameterSource param = new BeanPropertySqlParameterSource(administrator);
 
         if (administrator.getId() == null) {
@@ -52,7 +52,7 @@ public class AdministratorRepository {
      * メルアドとパスワードから管理者情報取得
      */
 
-    public Administrator load(String mailAddress, String password) {
+    public Administrator findByMailAddressAndPassword(String mailAddress, String password) {
         String sql = "SELECT id,name,email,password FROM administrators WHERE mailAddress=:mailAddress and password=:password";
 
         SqlParameterSource param = new MapSqlParameterSource().addValue("mailAddress", mailAddress).addValue("password",
