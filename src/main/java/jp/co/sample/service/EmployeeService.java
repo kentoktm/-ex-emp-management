@@ -27,4 +27,13 @@ public class EmployeeService {
 
     }
 
+    /**
+     * showDetail追加
+     */
+    public Employee showDetail(Integer id) {
+        employeeRepository.load(id);
+
+        return employeeRepository.load(id);
+    }
+
 }
