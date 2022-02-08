@@ -43,7 +43,7 @@ public class EmployeeRepository {
     /**
      * 従業員情報を入社日で取得
      */
-    public Employee load(Date hireDate) {
+    public Employee findAll(Date hireDate) {
         String sql = "SELECT id,name,image,gender,hireDate,mailAddress,zipCode,address,telephone,salary,characteristics,dependentsCount FROM employees ORDER BY hireDate DESC";
         SqlParameterSource param = new MapSqlParameterSource().addValue("HireDate", hireDate);
 

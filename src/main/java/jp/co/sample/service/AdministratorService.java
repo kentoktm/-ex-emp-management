@@ -31,4 +31,8 @@ public class AdministratorService {
 
     }
 
+    public Object getName() {
+        return null;
+    }
+
 }

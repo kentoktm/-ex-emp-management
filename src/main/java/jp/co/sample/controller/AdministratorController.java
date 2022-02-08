@@ -1,7 +1,10 @@
 package jp.co.sample.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -15,6 +18,12 @@ import jp.co.sample.service.AdministratorService;
 public class AdministratorController {
     @Autowired
     private AdministratorService administratorService;
+
+    /**
+     * session宣言
+     */
+    @Autowired
+    private HttpSession session;
 
     /**
      * InsertAdministratorFormインスタンス化
@@ -59,6 +68,23 @@ public class AdministratorController {
     @RequestMapping("/")
     public String toLogin() {
         return "administrator/login.html";
+    }
+
+    /**
+     * loginメソッド
+     */
+    @RequestMapping("/login")
+    public String login(LoginForm form, Model model) {
+        administratorService.login(form.getMailAddress(), form.getPassword());
+        AdministratorService administratorService = new AdministratorService();
+
+        if (administratorService.equals(null)) {
+            model.addAttribute("error", "メールアドレスまたはパスワードが不正です");
+        } else {
+            session.setAttribute("name", administratorService.getName());
+        }
+        return "employee/showList";
+
     }
 
 }
