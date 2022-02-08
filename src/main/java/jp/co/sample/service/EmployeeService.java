@@ -1,5 +1,6 @@
 package jp.co.sample.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class EmployeeService {
      */
     public List<Employee> showList() {
         employeeRepository.findAll();
-        return repository.findAll();
+        return new ArrayList<Employee>();
 
     }
 

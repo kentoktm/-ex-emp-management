@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch EmployeeManagementApplication",
+            "request": "launch",
+            "mainClass": "com.example.EmployeeManagementApplication",
+            "projectName": "employee-management"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-ExEmpManagementApplication<ex-emp-management>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
