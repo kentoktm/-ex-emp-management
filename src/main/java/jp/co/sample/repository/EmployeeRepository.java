@@ -1,6 +1,5 @@
 package jp.co.sample.repository;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,11 +42,10 @@ public class EmployeeRepository {
     /**
      * 従業員情報を入社日で取得
      */
-    public Employee findAll(Date hireDate) {
-        String sql = "SELECT id,name,image,gender,hireDate,mailAddress,zipCode,address,telephone,salary,characteristics,dependentsCount FROM employees ORDER BY hireDate DESC";
-        SqlParameterSource param = new MapSqlParameterSource().addValue("HireDate", hireDate);
+    public Employee findAll() {
+        String sql = "SELECT id,name,image,gender,hireDate,mailAddress,zipCode,address,telephone,salary,characteristics,dependents_Count FROM employees ORDER BY hire_date DESC";
 
-        List<Employee> employeeList = template.query(sql, param, EMPLOYEE_ROW_Mapper);
+        List<Employee> employeeList = template.query(sql, EMPLOYEE_ROW_Mapper);
 
         if (employeeList.size() == 0) {
             return null;
