@@ -28,12 +28,19 @@ public class EmployeeService {
     }
 
     /**
-     * showDetail追加
+     * showDetail 追加
      */
     public Employee showDetail(Integer id) {
         employeeRepository.load(id);
 
         return employeeRepository.load(id);
+    }
+
+    /**
+     * update 追加
+     */
+    public void update(Employee employee) {
+        employeeRepository.update(employee);
     }
 
 }
