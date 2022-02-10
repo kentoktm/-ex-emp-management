@@ -5,6 +5,7 @@ public class InsertAdministratorForm {
     /**
      * 名前
      */
+
     private String name;
     /**
      * メルアド
