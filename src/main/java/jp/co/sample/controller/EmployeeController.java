@@ -51,6 +51,9 @@ public class EmployeeController {
         return "employee / detail";
     }
 
+    /**
+     * @RequestMapping("/update")追加
+     */
     @RequestMapping("/update")
     public String update(UpdateEmployeeForm form) {
         Employee employee = employeeService.showDetail(Integer.parseInt(form.getId()));
